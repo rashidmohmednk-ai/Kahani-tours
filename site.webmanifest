@@ -1,0 +1,14 @@
+{
+  "name": "Kahani Travel & Tours",
+  "short_name": "Kahani Travel",
+  "description": "Travel agency in Thamarassery, Kozhikode: holidays, visas, tickets, attestation and Umrah.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#faf7f2",
+  "theme_color": "#141b33",
+  "icons": [
+    { "src": "assets/favicon.png", "sizes": "64x64", "type": "image/png" },
+    { "src": "assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
