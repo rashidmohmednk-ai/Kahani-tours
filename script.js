@@ -48,10 +48,14 @@
   function restart() { clearInterval(timer); timer = setInterval(() => go(cur + 1), 6500); }
   restart();
 
-  /* ---------- Marquee ---------- */
-  const names = PACKAGES.map((p) => p.name).concat(["Umrah"]);
-  const row = names.map((n) => `<span>${esc(n)}</span><i>✦</i>`).join("");
-  $("#marquee").innerHTML = row + row;
+  /* ---------- Destination ticker ---------- */
+  const catLabel = { international: "International", india: "India", kerala: "Kerala" };
+  const chip = (p, hidden) => `
+    <a href="#packages" class="mq-item" data-mq="${p.id}" ${hidden ? 'aria-hidden="true" tabindex="-1"' : ""}>
+      <img src="${img(p.image, 120)}" alt="" loading="lazy" width="44" height="44">
+      <span class="mq-txt"><b>${esc(p.name)}</b><small>${catLabel[p.category]} · ${esc(p.duration.replace(" Nights", "N").replace(" Night", "N").replace(" Days", "D").replace(" / ", "/"))}</small></span>
+    </a>`;
+  $("#marquee").innerHTML = PACKAGES.map((p) => chip(p, false)).join("") + PACKAGES.map((p) => chip(p, true)).join("");
 
   /* ---------- Services ---------- */
   $("#svcGrid").innerHTML = SERVICES.map((s, i) => `
@@ -140,6 +144,14 @@
   $("#mEnquire").addEventListener("click", () => {
     closeModal();
     prefill("Holiday package", `I'm interested in the ${currentPkg.name} package (${currentPkg.duration}). Please share the details and price.`);
+  });
+
+  $("#marquee").addEventListener("click", (e) => {
+    const a = e.target.closest("[data-mq]");
+    if (!a) return;
+    const p = PACKAGES.find((x) => x.id === a.dataset.mq);
+    setTab(p.category);
+    setTimeout(() => openPkg(p.id), 650);
   });
 
   /* ---------- Dropdowns ---------- */
