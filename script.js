@@ -154,6 +154,67 @@
     setTimeout(() => openPkg(p.id), 650);
   });
 
+  /* ---------- Google reviews slider ---------- */
+  (function reviews() {
+    const track = $("#rvTrack"), dots = $("#rvDots"), slider = $("#rvSlider");
+    $("#gRating").textContent = GOOGLE.rating.toFixed(1);
+    $("#gCount").textContent = GOOGLE.count;
+    $("#gBadge").href = $("#gAll").href = GOOGLE.reviewsUrl;
+    $("#gWrite").href = GOOGLE.writeUrl;
+    const hues = [214, 168, 28, 262, 340, 196, 120, 10, 290, 46];
+    const initials = (n) => n.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+    track.innerHTML = REVIEWS.map((r, i) => `
+      <article class="rv-card" role="group" aria-roledescription="slide" aria-label="Review ${i + 1} of ${REVIEWS.length}">
+        <div class="rv-top">
+          <span class="rv-stars" aria-label="Rated 5 out of 5">★★★★★</span>
+          <svg class="g-logo sm" viewBox="0 0 48 48" aria-label="Google review"><use href="#g-mark"/></svg>
+        </div>
+        <span class="rv-tag">${esc(r.tag)}</span>
+        <blockquote class="rv-text${r.text.length > 220 ? " long" : ""}">${esc(r.text)}</blockquote>
+        ${r.text.length > 220 ? '<button type="button" class="rv-more">Read more</button>' : ""}
+        <footer class="rv-author">
+          <span class="rv-avatar" style="--h:${hues[i % hues.length]}">${esc(initials(r.name))}</span>
+          <span><b>${esc(r.name)}</b><small>${esc(r.date)} · <span class="verified">Google review</span></small></span>
+        </footer>
+      </article>`).join("");
+    track.addEventListener("click", (e) => {
+      const b = e.target.closest(".rv-more"); if (!b) return;
+      const t = b.previousElementSibling; const open = t.classList.toggle("open");
+      b.textContent = open ? "Show less" : "Read more";
+    });
+    const cards = () => [...track.children];
+    const perView = () => Math.max(1, Math.round(track.clientWidth / cards()[0].getBoundingClientRect().width));
+    const pages = () => Math.max(1, cards().length - perView() + 1);
+    let idx = 0, timer;
+    function renderDots() {
+      dots.innerHTML = Array.from({ length: pages() }, (_, i) => `<button type="button" role="tab" aria-label="Go to review ${i + 1}" ${i === idx ? 'class="on" aria-selected="true"' : 'aria-selected="false"'}></button>`).join("");
+    }
+    function goTo(i, smooth = true) {
+      idx = (i + pages()) % pages();
+      track.scrollTo({ left: cards()[idx].offsetLeft - track.offsetLeft, behavior: smooth ? "smooth" : "auto" });
+      [...dots.children].forEach((d, k) => { d.classList.toggle("on", k === idx); d.setAttribute("aria-selected", k === idx); });
+    }
+    dots.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { goTo([...dots.children].indexOf(b)); restart(); } });
+    $("#rvPrev").addEventListener("click", () => { goTo(idx - 1); restart(); });
+    $("#rvNext").addEventListener("click", () => { goTo(idx + 1); restart(); });
+    let st;
+    track.addEventListener("scroll", () => {
+      clearTimeout(st);
+      st = setTimeout(() => {
+        const x = track.scrollLeft, list = cards();
+        let best = 0; list.forEach((c, k) => { if (Math.abs(c.offsetLeft - track.offsetLeft - x) < Math.abs(list[best].offsetLeft - track.offsetLeft - x)) best = k; });
+        idx = Math.min(best, pages() - 1);
+        [...dots.children].forEach((d, k) => d.classList.toggle("on", k === idx));
+      }, 120);
+    }, { passive: true });
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function restart() { clearInterval(timer); if (!reduce) timer = setInterval(() => goTo(idx + 1), 5500); }
+    ["mouseenter", "focusin", "touchstart"].forEach((ev) => slider.addEventListener(ev, () => clearInterval(timer), { passive: true }));
+    ["mouseleave", "focusout"].forEach((ev) => slider.addEventListener(ev, restart));
+    addEventListener("resize", () => { renderDots(); goTo(Math.min(idx, pages() - 1), false); });
+    renderDots(); restart();
+  })();
+
   /* ---------- Dropdowns ---------- */
   const opt = (list) => list.map((n) => `<option>${esc(n)}</option>`).join("");
   const groups = { international: "International", india: "India", kerala: "Kerala" };

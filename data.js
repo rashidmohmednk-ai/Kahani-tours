@@ -405,3 +405,28 @@ const PACKAGES = [
 
 /* Destinations used by enquiry dropdowns (packages + extras) */
 const EXTRA_DESTINATIONS = ["Umrah", "Other / Not decided yet"];
+
+/* ---------------------------------------------------------
+   GOOGLE REVIEWS: copied word for word from the Kahani Travel & Tours Google Business Profile.
+   Overall: 5.0 from 56 reviews (Nov 2026). Update rating/count/reviews here when new ones come in.
+   --------------------------------------------------------- */
+const GOOGLE = {
+  rating: 5.0,
+  count: 56,
+  placeId: "ChIJj_6gtSFppjsRJOz3S9flCd8",
+  get reviewsUrl() { return `https://search.google.com/local/reviews?placeid=${this.placeId}`; },
+  get writeUrl() { return `https://search.google.com/local/writereview?placeid=${this.placeId}`; }
+};
+
+const REVIEWS = [
+  { name: "Shincy George", date: "Aug 2025", tag: "Tickets & Visa", text: "It is the best place for ticket booking and visa processing. I approached Mr. Sadiq, and he is truly the best person—friendly and approachable like a friend. He clearly explained all the details. Even when many issues came up until my ticket was booked, he found solutions and overcame every situation. He managed to book my ticket in the easiest way at the lowest fare and shared it with us. I always recommend everyone to choose this travel agency." },
+  { name: "Afsal Vettil", date: "Nov 2024", tag: "Oman Visa", text: "I was particularly impressed with the experience with kahani tours and travels. I had a delightful experience obtaining oman visa. Thanks to Mr. Sadique for the great support. All the details were well explained, and the assistance was excellent. I highly recommend their service if you are looking for visa support and other travel purposes." },
+  { name: "Hiba Fathima A N", date: "Nov 2026", tag: "Tickets & Attestation", text: "Extremely satisfied with their service! From ticket booking to attestation, everything was smooth. Excellent professionalism throughout." },
+  { name: "Fasil Nochiparambath", date: "Oct 2024", tag: "Holiday", text: "Excellent Service and Support. They made the booking process effortless, and their attention to detail truly enhanced my experience for my vacation." },
+  { name: "Fasil Mohammed", date: "Aug 2025", tag: "Booking", text: "Smooth booking, great support. Highly recommend!" },
+  { name: "Shemeer Rahim", date: "Jul 2024", tag: "Service", text: "Very good experience. Good service, perfect rate and sweet talking" },
+  { name: "Khamarunnissa VK", date: "Oct 2024", tag: "Tour Package", text: "Very good experience with Kahani. Got low fair tour package." },
+  { name: "Abu", date: "Jul 2024", tag: "Flight Tickets", text: "Best travel service, I got low fare flight ticket" },
+  { name: "Nisam", date: "Sep 2024", tag: "Tour Package", text: "Best Tour packges and excellent customer service" },
+  { name: "Abhi Kannan", date: "Nov 2024", tag: "Bus Tickets", text: "Great service for my bus to bangalore" }
+];

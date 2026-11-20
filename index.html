@@ -11,8 +11,8 @@
 <link rel="canonical" href="https://kahanitravel.in/">
 <meta name="geo.region" content="IN-KL">
 <meta name="geo.placename" content="Thamarassery, Kozhikode">
-<meta name="geo.position" content="11.4157;75.9387">
-<meta name="ICBM" content="11.4157, 75.9387">
+<meta name="geo.position" content="11.4244;75.9307">
+<meta name="ICBM" content="11.4244, 75.9307">
 
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
@@ -65,13 +65,17 @@
       ],
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Dr KKMK Complex, Near Bishop's House",
+        "streetAddress": "Dr KKMK Complex, Koyilandy - Edavanna Road, Near Bishop's House",
         "addressLocality": "Thamarassery",
         "addressRegion": "Kerala",
         "postalCode": "673573",
         "addressCountry": "IN"
       },
-      "geo": { "@type": "GeoCoordinates", "latitude": 11.4157, "longitude": 75.9387 },
+      "geo": { "@type": "GeoCoordinates", "latitude": 11.4244444, "longitude": 75.9307073 },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "20:30" }
+      ],
       "hasMap": "https://share.google/tsIcHY87o0FJ7wq28",
       "areaServed": ["Thamarassery", "Kozhikode", "Calicut", "Wayanad", "Malappuram", "Kerala", "India"],
       "priceRange": "₹₹",
@@ -282,6 +286,39 @@
   </div>
 </section>
 
+<!-- ============ GOOGLE REVIEWS ============ -->
+<section class="section reviews" id="reviews" aria-labelledby="reviews-h">
+  <div class="wrap">
+    <div class="rv-head reveal">
+      <div>
+        <p class="eyebrow">Google Reviews</p>
+        <h2 id="reviews-h">Stories from <em>our travellers.</em></h2>
+      </div>
+      <a class="g-badge" id="gBadge" href="#" target="_blank" rel="noopener">
+        <svg class="g-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+        <span class="g-score"><b id="gRating">5.0</b><span class="stars" aria-hidden="true">★★★★★</span></span>
+        <span class="g-count">Based on <b id="gCount">56</b> Google reviews</span>
+      </a>
+    </div>
+
+    <div class="rv-slider reveal" id="rvSlider" aria-roledescription="carousel" aria-label="Google reviews">
+      <div class="rv-track" id="rvTrack"></div>
+    </div>
+
+    <div class="rv-controls reveal">
+      <div class="rv-dots" id="rvDots" role="tablist" aria-label="Choose review"></div>
+      <div class="rv-arrows">
+        <button type="button" class="rv-btn" id="rvPrev" aria-label="Previous review"><svg class="ic" style="transform:rotate(180deg)"><use href="#i-arrow"/></svg></button>
+        <button type="button" class="rv-btn" id="rvNext" aria-label="Next review"><svg class="ic"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+    <div class="rv-cta reveal">
+      <a class="btn btn-navy" id="gAll" href="#" target="_blank" rel="noopener">Read all reviews on Google <svg class="ic"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-outline-dark" id="gWrite" href="#" target="_blank" rel="noopener">Travelled with us? Write a review</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ KERALA FEATURE ============ -->
 <section class="kerala-band" aria-labelledby="kerala-h">
   <div class="kerala-bg" style="background-image:url('https://images.unsplash.com/photo-1723709431768-d749b0d814b9?auto=format&fit=crop&w=1920&q=70')" role="img" aria-label="Green hills of Wayanad, Kerala"></div>
@@ -439,7 +476,7 @@
     </div>
     <nav aria-label="Footer: explore">
       <h4>Explore</h4>
-      <a href="#about">About Us</a><a href="#services">Services</a><a href="#packages">Tour Packages</a><a href="#attestation">Attestation</a><a href="#umrah">Hajj &amp; Umrah</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+      <a href="#about">About Us</a><a href="#services">Services</a><a href="#packages">Tour Packages</a><a href="#attestation">Attestation</a><a href="#umrah">Hajj &amp; Umrah</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
     </nav>
     <nav aria-label="Footer: international packages">
       <h4>International</h4>
@@ -533,6 +570,7 @@
   <symbol id="i-ig" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM21.9 7.1c-.1-1.6-.4-3-1.6-4.2S17.6 1.3 16 1.2C14.3 1.1 9.7 1.1 8 1.2c-1.6.1-3 .4-4.2 1.6S2.2 5.5 2.1 7.1C2 8.8 2 13.4 2.1 15.1c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.7.1 6.3.1 8 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.7.1-6.3 0-8zM19.8 17a3.3 3.3 0 0 1-1.8 1.8c-1.3.5-4.3.4-5.7.4s-4.4.1-5.7-.4A3.3 3.3 0 0 1 4.8 17c-.5-1.3-.4-4.3-.4-5.7s-.1-4.4.4-5.7A3.3 3.3 0 0 1 6.6 3.8c1.3-.5 4.3-.4 5.7-.4s4.4-.1 5.7.4a3.3 3.3 0 0 1 1.8 1.8c.5 1.3.4 4.3.4 5.7s.1 4.4-.4 5.7z"/></symbol>
   <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8V6.1c0-.9.2-1.3 1.6-1.3H17V1.6C16.6 1.5 15.4 1.4 14 1.4c-2.9 0-4.7 1.7-4.7 4.9V8H6.2v3.6h3.1V22.6H14V11.6h3l.5-3.6z"/></symbol>
   <symbol id="i-google" viewBox="0 0 24 24"><path fill="currentColor" d="M21.6 10.2H12v3.9h5.5c-.5 2.5-2.7 4-5.5 4a6.1 6.1 0 0 1 0-12.2c1.5 0 2.9.5 4 1.5l2.9-2.9A10 10 0 1 0 12 22c5 0 9.6-3.6 9.6-10 0-.6-.1-1.2-.2-1.8z"/></symbol>
+  <symbol id="g-mark" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14zm0-12H5V6h14z"/></symbol>
