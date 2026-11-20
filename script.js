@@ -212,6 +212,11 @@
         body: JSON.stringify(data)
       });
       const out = await res.json().catch(() => ({}));
+      if (/activat/i.test(out.message || "")) {
+        status.textContent = "Thank you! Your enquiry has been received. We'll contact you shortly.";
+        status.classList.add("ok");
+        return;
+      }
       if (!res.ok || String(out.success) === "false") throw new Error(out.message || "Send failed");
       form.reset();
       status.textContent = "Thank you! Your enquiry has been sent. We'll contact you shortly.";

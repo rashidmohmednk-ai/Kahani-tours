@@ -246,6 +246,52 @@ const PACKAGES = [
     ]
   },
 
+  {
+    id: "goa", category: "india", flag: "🏖️",
+    name: "Goa", tagline: "Sun, sand & Portuguese charm",
+    duration: "3 Nights / 4 Days", route: "North Goa · South Goa · Panjim",
+    image: U + "photo-1512343879784-a960bf40e7f2",
+    highlights: ["Baga, Calangute & Anjuna beaches", "Fort Aguada & Chapora Fort", "Old Goa churches (UNESCO)", "Mandovi River sunset cruise", "Water sports & Dudhsagar (optional)"],
+    includes: ["Airport / railway transfers", "3 nights beach resort with breakfast", "North & South Goa sightseeing", "River cruise"],
+    itinerary: [
+      ["Arrive Goa", "Check in at your beach resort. In the evening, take a sunset cruise on the Mandovi River with live Goan music."],
+      ["North Goa", "Visit Fort Aguada and the Baga, Calangute and Anjuna beaches, with water sports, then spend the evening at a beach shack."],
+      ["South Goa & Old Goa", "See the Basilica of Bom Jesus and Se Cathedral, Panjim's Latin Quarter, Miramar and the quiet Colva beach."],
+      ["Departure", "Shop for cashews and spices, then transfer to the airport or railway station."]
+    ]
+  },
+  {
+    id: "rajasthan", category: "india", flag: "🏰",
+    name: "Rajasthan", tagline: "Palaces, forts & desert royalty",
+    duration: "5 Nights / 6 Days", route: "Jaipur · Jodhpur · Udaipur",
+    image: "https://plus.unsplash.com/premium_photo-1661901647310-4deafc6f29a5",
+    highlights: ["Amber Fort & Hawa Mahal, Jaipur", "Mehrangarh Fort, Jodhpur", "Lake Pichola boat ride, Udaipur", "City Palace & Jag Mandir", "Rajasthani folk dinner"],
+    includes: ["Private AC car throughout", "5 nights heritage-style hotels with breakfast", "Sightseeing as per itinerary", "Lake Pichola boat ride"],
+    itinerary: [
+      ["Arrive Jaipur", "Check in, then shop in the evening at Johari and Bapu Bazaar in the Pink City."],
+      ["Jaipur sightseeing", "Visit Amber Fort, Jal Mahal, the Hawa Mahal, City Palace and Jantar Mantar."],
+      ["Jaipur to Jodhpur", "Drive to the Blue City and take an evening walk around the clock tower market."],
+      ["Jodhpur to Udaipur", "See Mehrangarh Fort and Jaswant Thada, then drive via the Ranakpur Jain temples to Udaipur."],
+      ["Udaipur", "Visit the City Palace and Saheliyon ki Bari, with a sunset boat ride on Lake Pichola."],
+      ["Departure", "Transfer to Udaipur airport."]
+    ]
+  },
+  {
+    id: "ooty", category: "india", flag: "🚂",
+    name: "Ooty & Kodaikanal", tagline: "Queen and princess of the hills",
+    duration: "4 Nights / 5 Days", route: "Ooty · Coonoor · Kodaikanal",
+    image: U + "photo-1624485871361-65454b13edfa",
+    highlights: ["Nilgiri toy train (UNESCO)", "Ooty Lake & Botanical Garden", "Doddabetta Peak", "Kodaikanal Lake & Coaker's Walk", "Pillar Rocks & pine forest"],
+    includes: ["Pick-up from Calicut / Thamarassery", "4 nights hill resort with breakfast", "Private cab", "Sightseeing as per itinerary"],
+    itinerary: [
+      ["Calicut to Ooty", "Take the scenic ghat drive via Nilambur and Gudalur, then check in and spend the evening at leisure."],
+      ["Ooty sightseeing", "Visit the Botanical Garden, Rose Garden, Doddabetta Peak, the tea factory and a boat ride on Ooty Lake."],
+      ["Coonoor & the toy train", "Ride the Nilgiri Mountain Railway to Coonoor, then see Sim's Park and Dolphin's Nose."],
+      ["Ooty to Kodaikanal", "Drive to Kodaikanal for Coaker's Walk, Kodai Lake and the Bryant Park evening market."],
+      ["Kodaikanal & return", "See Pillar Rocks, the pine forest and Guna Caves, then return."]
+    ]
+  },
+
   /* ---------------- KERALA ---------------- */
   {
     id: "munnar", category: "kerala", flag: "🍃",
@@ -315,7 +361,46 @@ const PACKAGES = [
       ["Kovalam", "Drive south to Kovalam for the beach and lighthouse sunset."],
       ["Departure", "Drop at Trivandrum airport or railway station."]
     ]
+  },
+  {
+    id: "thekkady", category: "kerala", flag: "🐅",
+    name: "Thekkady", tagline: "Spice trails & wild Periyar",
+    duration: "2 Nights / 3 Days", route: "Kumily · Periyar",
+    image: U + "photo-1765635311503-c314839cbcdf",
+    highlights: ["Periyar Lake boat safari", "Spice plantation walk", "Elephant interaction (optional)", "Kalaripayattu & Kathakali shows", "Jungle trekking / bamboo rafting"],
+    includes: ["Private AC cab", "2 nights jungle resort with breakfast", "Periyar boating tickets", "Spice plantation tour"],
+    itinerary: [
+      ["Arrive Thekkady", "Check in at a resort near the forest, with Kalaripayattu and Kathakali shows in the evening."],
+      ["Periyar & spices", "Take an early boat safari on Periyar Lake to spot wildlife, then a guided spice plantation walk and shopping in Kumily."],
+      ["Return", "Go on an optional nature walk or bamboo rafting, then drive back."]
+    ]
+  },
+  {
+    id: "fortkochi", category: "kerala", flag: "⛵",
+    name: "Fort Kochi Heritage", tagline: "Queen of the Arabian Sea",
+    duration: "1 Night / 2 Days", route: "Fort Kochi · Mattancherry · Marine Drive",
+    image: U + "photo-1783068146008-022c4472de73",
+    highlights: ["Chinese fishing nets at sunset", "Mattancherry Palace & Jew Town", "St. Francis Church", "Kathakali performance", "Marine Drive & Lulu Mall"],
+    includes: ["Private AC cab", "1 night hotel with breakfast", "Heritage walk", "Kathakali show tickets"],
+    itinerary: [
+      ["Kochi heritage", "See the Chinese fishing nets, St. Francis Church, Santa Cruz Basilica, Mattancherry Palace and the Jew Town spice market. Watch a Kathakali show in the evening."],
+      ["Kochi city & return", "Spend the morning on Marine Drive, then shop at Lulu Mall before driving back."]
+    ]
+  },
+  {
+    id: "vagamon", category: "kerala", flag: "⛰️",
+    name: "Vagamon", tagline: "Meadows, pines & mist",
+    duration: "2 Nights / 3 Days", route: "Vagamon · Idukki",
+    image: U + "photo-1659410553816-fa68a5d1bd94",
+    highlights: ["Rolling Vagamon meadows", "Pine forest walk", "Paragliding (seasonal)", "Kurisumala & Murugan Hill", "Idukki Arch Dam viewpoint"],
+    includes: ["Private AC cab", "2 nights hill resort with breakfast", "Sightseeing", "Pick-up from Kochi / Calicut"],
+    itinerary: [
+      ["Arrive Vagamon", "Drive up through the tea estates, check in, and enjoy a misty evening at the meadows."],
+      ["Vagamon sightseeing", "See the pine forest, Vagamon Lake, the meadows and Kurisumala, with optional paragliding."],
+      ["Idukki & return", "Stop at the Idukki Arch Dam viewpoint on your way back."]
+    ]
   }
+
 ];
 
 /* Destinations used by enquiry dropdowns (packages + extras) */
