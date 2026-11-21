@@ -112,7 +112,7 @@ address { font-style: normal; margin-bottom: 8px; }
 .slide.on { opacity: 1; transform: scale(1); }
 .hero-shade { background: linear-gradient(180deg, rgba(20, 27, 51, .55) 0%, rgba(20, 27, 51, .15) 30%, rgba(20, 27, 51, .25) 55%, rgba(20, 27, 51, .9) 100%); }
 .hero-in { position: relative; z-index: 2; margin-bottom: auto; padding-top: clamp(20px, 8vh, 90px); }
-.kicker { font-size: .78rem; letter-spacing: .26em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; }
+.kicker { display: block; font-family: var(--sans); font-weight: 400; line-height: 1.6; font-size: .78rem; letter-spacing: .26em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; }
 .hero h1 { font-size: clamp(3.4rem, 10vw, 8.6rem); font-weight: 500; color: #fff; line-height: .95; margin-bottom: 28px; letter-spacing: -.02em; }
 .hero h1 em { color: var(--gold); }
 .hero-lead { font-size: clamp(1rem, 1.4vw, 1.18rem); max-width: 560px; color: rgba(255, 255, 255, .85); font-weight: 300; }
