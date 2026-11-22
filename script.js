@@ -57,16 +57,18 @@
     </a>`;
   $("#marquee").innerHTML = PACKAGES.map((p) => chip(p, false)).join("") + PACKAGES.map((p) => chip(p, true)).join("");
 
-  /* ---------- Services ---------- */
+  /* ---------- Services (photo cards + details window) ---------- */
   $("#svcGrid").innerHTML = SERVICES.map((s, i) => `
     <article class="svc reveal" style="--d:${(i % 4) * 70}ms">
-      <div class="svc-top">
+      <button type="button" class="svc-open" data-svc="${s.id}" aria-label="View details: ${esc(s.title)}">
+        <span class="svc-media"><img src="${img(s.image, 640)}" alt="" loading="lazy" width="640" height="400"></span>
         <span class="svc-ic"><svg class="ic"><use href="#${s.icon}"/></svg></span>
-        <span class="svc-num">${String(i + 1).padStart(2, "0")}</span>
-      </div>
-      <h3>${esc(s.title)}</h3>
-      <p>${esc(s.text)}</p>
-      <a href="${s.link || "#contact"}" class="more" ${s.link ? "" : `data-enquire="${esc(s.title)}"`}>${s.link ? "Discover" : "Enquire"} <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <span class="svc-body">
+          <h3>${esc(s.title)}</h3>
+          <span class="svc-text">${esc(s.text)}</span>
+          <span class="svc-btn">View details <svg class="ic"><use href="#i-arrow"/></svg></span>
+        </span>
+      </button>
     </article>`).join("") + `
     <article class="svc svc-cta reveal" style="--d:210ms">
       <p class="eyebrow light">Not sure where to start?</p>
@@ -74,6 +76,41 @@
       <a href="#" class="btn btn-wa" data-wa="Hello Kahani Travel, I need some travel advice."><svg class="ic"><use href="#i-wa"/></svg>WhatsApp Us</a>
       <a href="tel:+919946500546" class="svc-call">or call +91 99465 00546</a>
     </article>`;
+
+  const svcModal = $("#svcModal");
+  let svcLastFocus, svcCurrent;
+  function openSvc(id) {
+    const s = SERVICES.find((x) => x.id === id);
+    if (!s) return;
+    svcCurrent = s; svcLastFocus = document.activeElement;
+    $("#sHero").style.backgroundImage = `linear-gradient(180deg,rgba(20,27,51,.1),rgba(20,27,51,.88)),url('${img(s.image, 1400)}')`;
+    $("#sIcon").innerHTML = `<svg class="ic"><use href="#${s.icon}"/></svg>`;
+    $("#sTitle").textContent = s.title;
+    $("#sIntro").textContent = s.intro;
+    $("#sItems").innerHTML = s.items.map((t) => `<li>${esc(t)}</li>`).join("");
+    $("#sNote").textContent = s.note || "Tell us what you need and we'll guide you through every step, with clear pricing and no hidden charges.";
+    const link = $("#sLink");
+    if (s.link) { link.href = s.link.href; link.querySelector("span").textContent = s.link.label; link.hidden = false; } else link.hidden = true;
+    const w = $("#sWa");
+    w.href = wa(`Hello Kahani Travel, I need help with ${s.title}.`); w.target = "_blank"; w.rel = "noopener";
+    svcModal.classList.add("open"); svcModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("lock");
+    $(".modal-card", svcModal).scrollTop = 0;
+    $(".modal-x", svcModal).focus();
+  }
+  function closeSvc() {
+    svcModal.classList.remove("open"); svcModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("lock");
+    if (svcLastFocus) svcLastFocus.focus({ preventScroll: true });
+  }
+  $("#svcGrid").addEventListener("click", (e) => { const b = e.target.closest("[data-svc]"); if (b) openSvc(b.dataset.svc); });
+  $$("[data-close]", svcModal).forEach((el) => el.addEventListener("click", closeSvc));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && svcModal.classList.contains("open")) closeSvc(); });
+  $("#sLink").addEventListener("click", (e) => {
+    const href = e.currentTarget.getAttribute("href");
+    closeSvc();
+    if (href === "#packages") { e.preventDefault(); document.getElementById("packages").scrollIntoView({ behavior: "smooth" }); }
+  });
 
   /* ---------- Packages ---------- */
   const grid = $("#pkgGrid");
@@ -239,6 +276,11 @@
     if (!a) return;
     e.preventDefault();
     prefill(a.dataset.enquire, `Hello, I'd like to know more about ${a.dataset.enquire}.`);
+  });
+
+  $("#sEnquire").addEventListener("click", () => {
+    closeSvc();
+    prefill(svcCurrent.title, `Hello, I'd like help with ${svcCurrent.title}.`);
   });
 
   $("#quickForm").addEventListener("submit", (e) => {

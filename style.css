@@ -541,3 +541,54 @@ address { font-style: normal; margin-bottom: 8px; }
   .rv-btn { width: 44px; height: 44px; }
   .rv-cta .btn { width: 100%; }
 }
+
+/* ---------- Service photo cards ---------- */
+.svc-grid { gap: 24px; border: 0 !important; }
+.svc { padding: 0 !important; border: 0 !important; background: transparent !important; }
+.svc-open { all: unset; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: column; height: 100%; width: 100%; background: #fff; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; position: relative; transition: transform .4s var(--ease), box-shadow .4s, border-color .4s; }
+.svc-open:hover, .svc-open:focus-visible { transform: translateY(-6px); box-shadow: var(--shadow); border-color: transparent; }
+.svc-open:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.svc-media { display: block; aspect-ratio: 16 / 10; overflow: hidden; background: var(--sand); }
+.svc-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.svc-open:hover .svc-media img { transform: scale(1.07); }
+.svc-open .svc-ic { width: 50px; height: 50px; border-radius: 16px; background: #fff; color: var(--teal); border: 0; box-shadow: 0 10px 24px -10px rgba(20, 27, 51, .5); display: grid; place-items: center; transition: .35s var(--ease); }
+.svc-media + .svc-ic { position: relative; top: 0; margin: -25px 0 -25px 20px; transform: none; z-index: 1; }
+.svc-open:hover .svc-ic { background: var(--teal); color: #fff; transform: none; }
+.svc-ic .ic { width: 26px; height: 26px; }
+.svc-body { display: flex; flex-direction: column; flex: 1; padding: 34px 22px 22px; }
+.svc-body h3 { font-family: var(--sans); font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; letter-spacing: -.01em; }
+.svc-text { font-size: .9rem; color: var(--muted); line-height: 1.55; flex: 1; margin-bottom: 18px; }
+.svc-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 16px; border: 1.5px solid var(--navy); border-radius: 14px; color: var(--navy); font-weight: 600; font-size: .92rem; transition: .3s var(--ease); }
+.svc-open:hover .svc-btn { background: var(--navy); color: #fff; }
+.svc-cta { padding: 34px 28px !important; border-radius: 22px; background: var(--ink) !important; display: flex; flex-direction: column; justify-content: center; }
+@media (max-width: 720px) {
+  .svc-grid { grid-template-columns: 1fr 1fr !important; gap: 14px; }
+  .svc-body { padding: 30px 14px 14px; }
+  .svc-body h3 { font-size: 1rem; }
+  .svc-text { display: none; }
+  .svc-btn { padding: 10px 8px; font-size: .82rem; border-radius: 12px; }
+  .svc-media + .svc-ic { width: 42px; height: 42px; margin: -21px 0 -21px 14px; border-radius: 13px; }
+  .svc-cta { padding: 18px 14px !important; justify-content: center; text-align: center; align-items: center; }
+  .svc-cta .eyebrow { display: none; }
+  .svc-cta h3 { font-size: 1.25rem; margin-bottom: 14px; }
+  .svc-cta .btn { align-self: stretch; padding: 11px 10px; font-size: .85rem; }
+  .svc-call { font-size: .78rem; }
+}
+
+/* ---------- Service details modal ---------- */
+.svc-modal .modal-card { width: min(780px, 100%); }
+.svc-modal .modal-hero { height: 260px; }
+.s-icon { width: 54px; height: 54px; border-radius: 16px; background: #fff; color: var(--teal); display: grid; place-items: center; margin-bottom: 14px; }
+.s-icon .ic { width: 28px; height: 28px; }
+.s-intro { font-size: 1.08rem; color: var(--ink); margin-bottom: 26px; }
+.s-items { list-style: none; padding: 0; margin: 0 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+.s-items li { padding-left: 26px; position: relative; font-size: .95rem; }
+.s-items li::before { content: "✓"; position: absolute; left: 0; top: 1px; width: 18px; height: 18px; border-radius: 50%; background: rgba(31, 157, 139, .12); color: var(--teal); font-size: .7rem; display: grid; place-items: center; font-weight: 700; }
+.s-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 720px) {
+  .s-items { grid-template-columns: 1fr; }
+  .s-actions .btn { width: 100%; }
+  .svc-modal .modal-hero { height: 200px; }
+}
+
+[hidden] { display: none !important; }

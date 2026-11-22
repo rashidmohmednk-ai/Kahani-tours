@@ -30,13 +30,59 @@ const HERO_SLIDES = [
 ];
 
 const SERVICES = [
-  { icon: "s-visa", title: "Visa Services", text: "Employment visa stamping, tourist, visit and business visas for the GCC, Asia, Europe and beyond, plus e-Visa for India." },
-  { icon: "s-plane", title: "Air Tickets", text: "International and domestic flights at the best fares, with special group fares and help with date changes." },
-  { icon: "s-stamp", title: "Certificate Attestation", text: "HRD, Home Department, MEA and embassy attestation for academic, commercial, birth and marriage certificates.", link: "#attestation" },
-  { icon: "s-palm", title: "Tour Packages", text: "Tailor-made international and domestic holidays for honeymooners, families, friends and corporate groups.", link: "#packages" },
-  { icon: "s-kaaba", title: "Hajj & Umrah", text: "Umrah packages for groups and families, and customised packages planned with care and devotion.", link: "#umrah" },
-  { icon: "s-passport", title: "Passport Services", text: "Fresh passports, renewals, police clearance certificates (PCC) and medical appointments, all made simple." },
-  { icon: "s-train", title: "Train & Bus Tickets", text: "Indian Railways authorised ticketing agent (IRCTC). KSRTC and private bus bookings across India." }
+  {
+    id: "visa", icon: "s-visa", title: "Visa Services",
+    image: U + "photo-1581553673739-c4906b5d0de8",
+    text: "Employment visa stamping, tourist, visit and business visas for the GCC, Asia, Europe and beyond.",
+    intro: "Whether you are joining a new job in the Gulf or planning a holiday abroad, we prepare your file correctly and follow it through until the visa is in your hands.",
+    items: ["Employment visa stamping (GCC)", "Tourist & visit visas", "Business visas", "UAE, Saudi, Qatar, Oman, Kuwait & Bahrain", "Schengen, UK, USA, Canada & more", "Thailand, Malaysia, Singapore, Sri Lanka, Vietnam", "Georgia, Azerbaijan & Kazakhstan e-Visas", "Document checklist & form filling", "Appointment booking & travel insurance"],
+    note: "Visa approval is always the decision of the embassy or immigration authority. We make sure your application is complete and correctly filed."
+  },
+  {
+    id: "air", icon: "s-plane", title: "Air Tickets",
+    image: U + "photo-1780485345651-40ce963c7882",
+    text: "International and domestic flights at the best fares, with special group fares and help with date changes.",
+    intro: "Tell us where and when, and we compare airlines and routes to find you the best fare from Calicut, Kochi, Kannur or any airport.",
+    items: ["International & domestic flights", "Lowest-fare comparison across airlines", "Group & special fares", "Gulf return & one-way tickets", "Student & Umrah fares", "Date changes, cancellations & refunds", "Seat selection & extra baggage", "Web check-in help"]
+  },
+  {
+    id: "attest", icon: "s-stamp", title: "Certificate Attestation",
+    image: "https://plus.unsplash.com/premium_photo-1661487134705-b3693a52965c",
+    text: "HRD, Home Department, MEA and embassy attestation for academic, commercial, birth and marriage certificates.",
+    intro: "Properly attested papers are the first step to a job, studies or family visa abroad. We take your documents through every office and keep you updated.",
+    items: ["HRD / Education department", "Home Department", "Notary", "MEA attestation & Apostille", "UAE, Qatar, Saudi, Oman & Kuwait embassies", "Academic & educational certificates", "Commercial documents", "Birth, marriage, death & divorce certificates", "Power of attorney"],
+    link: { href: "#attestation", label: "Attestation details" }
+  },
+  {
+    id: "tours", icon: "s-palm", title: "Tour Packages",
+    image: U + "photo-1534008897995-27a23e859048",
+    text: "Tailor-made international and domestic holidays for honeymooners, families, friends and corporate groups.",
+    intro: "From Dubai and Thailand to Kashmir and our own Kerala, every package is planned around your dates, budget and the way you like to travel.",
+    items: ["International holidays", "Incredible India tours", "Kerala packages", "Honeymoon specials", "Family & group tours", "Corporate & school trips", "Hotels & resorts", "Transfers & sightseeing"],
+    link: { href: "#packages", label: "View all packages" }
+  },
+  {
+    id: "umrah", icon: "s-kaaba", title: "Hajj & Umrah",
+    image: U + "photo-1693590614566-1d3ea9ef32f7",
+    text: "Umrah packages for groups and families, and customised packages planned with care and devotion.",
+    intro: "A sacred journey deserves complete peace of mind. We look after the visa, flights, stay and Ziyarat so you can focus on your prayers.",
+    items: ["Umrah visa & insurance", "Group & family packages", "Customised private packages", "Hotels close to the Haram", "Makkah & Madinah Ziyarat", "Flights from Calicut (CCJ)", "Pre-departure guidance"],
+    link: { href: "#umrah", label: "About our Umrah service" }
+  },
+  {
+    id: "passport", icon: "s-passport", title: "Passport Services",
+    image: "https://plus.unsplash.com/premium_photo-1726863229625-6e3eda258d03",
+    text: "Fresh passports, renewals, police clearance certificates (PCC) and medical appointments, all made simple.",
+    intro: "Passport paperwork can be confusing. We fill in the forms, book your appointment and tell you exactly which documents to bring.",
+    items: ["Fresh passport applications", "Passport renewal & re-issue", "Tatkal passports", "Minor (child) passports", "Police Clearance Certificate (PCC)", "Change of name or address", "Medical appointments for Gulf visas", "Appointment booking at the PSK"]
+  },
+  {
+    id: "train", icon: "s-train", title: "Train & Bus Tickets",
+    image: U + "photo-1697186391801-a27366e823bd",
+    text: "Indian Railways authorised ticketing agent (IRCTC). KSRTC and private bus bookings across India.",
+    intro: "As an Indian Railways authorised ticketing agent, we book your train seats quickly, along with KSRTC and private buses across India.",
+    items: ["Indian Railways authorised agent", "Tatkal & general tickets", "Sleeper, AC & chair car", "Group railway bookings", "KSRTC bus tickets", "Private & interstate buses", "Bangalore, Chennai & Mumbai routes", "Cancellations & PNR help"]
+  }
 ];
 
 /* ---------------------------------------------------------
